@@ -1,24 +1,34 @@
-<div *ngIf="mobiles" class="container">
+<div *ngIf="mobiles" class="container mob-table">
   <div class="hearders">
     <h2 class="table-title">Manage mobiles</h2>
-    <button class="btn">Add Mobiles</button>
+    <button class="btn add">Add Mobiles</button>
 
   </div>
-  <table>
+  <table class="table">
     <thead>
       <tr>
         <th>Mobile</th>
         <th>Price</th>
-        <th>Ram</th>
+        <th>RAM</th>
         <th>Storage</th>
         <th></th>
         <th></th>
-       
-
-
-
       </tr>
     </thead>
+    <tbody class="text-center">
+        <tr *ngFor="let mobile of mobiles">
+            <td>{{mobile['name']}}</td>
+            <td>{{mobile['price']}}</td>
+            <td>{{mobile['ram']}}</td>
+            <td>{{mobile['storage']}}</td>
+            <td>
+              <button class="btn btn-primary">Edit</button>
+            </td>
+            <td>
+              <button class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </tbody>
   </table>
 
 </div>
